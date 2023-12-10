@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Conversion</title>
+<link rel="stylesheet" href="styles.css">
+<style>        
+body{
+	background-image: url('https://64.media.tumblr.com/e92a9472c0062f530e139d1d86abc620/tumblr_ou6ys7IwmU1w86w6ho1_1280.gif');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+.dropbtn {
+  background-color: #181b1c;
+  background-border: #e8dae8;
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color:#be7874}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #white;
+}
+
+h2{
+	text-align: center;
+	font-family:eczar;
+	color:#fadefa;
+	font-size: 35px
+}
+
+.box1{
+	max-width: 500px;
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid #DEDEDE;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.box2{
+	background-color: #e0b1ba;
+	max-width: 420px;
+	margin: 20px auto;
+	padding-top: 20px;
+	padding-left: 25px;
+	padding-right: 25px;
+	border: 2px solid #be7874;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+p{
+	color: #fadefa;
+	text-align: center;    
+	padding-top: 15px;
+	padding-right: 30px; 
+	padding-bottom: 15px;
+	padding-left: 80px;
+	margin: 10px auto;
+	background-color:black;
+}
+	
+footer {
+  display: block;
+}
+	
+.result{
+	font-weight: bold;
+	margin-top: 10px;
+}
+</style>
+</head>
+
+<div class="dropdown">
+<button class="dropbtn"> ☰ </button>
+
+<div class="dropdown-content">
+	<a href="https://jcasia10.github.io/casiacs1130" style="text-decoration:none;">HOME</a>
+	<a href="https://jcasia10.github.io/casiacs1130-conversion/" style="text-decoration:none;">CONVERTING</a>
+	<a href="https://jcasia10.github.io/casiacs1130-looping" style="text-decoration:none;">LOOPING</a>
+	<a href="https://jcasia10.github.io/casiacs1130-income-tax-calculator/" style="text-decoration:none;">INCOME TAX CALCULATOR</a>
+	<a href="https://jcasia10.github.io/casiacs1130-payroll/" style="text-	decoration:none;">PAYROLL</a>
+  </div>
+</div>
+
+<br>
+
+    <div class="box1">
+    <h2>Unit Converter</h2>
+
+    <form><div class="box2">
+    <label for="inputC" style="text-size: 12px;">Celsius:</label>
+    <input type="number" id="inputC" placeholder="Enter Celsius"></input>
+    <button type="button" id="CtoF">Convert to Fahrenheit</button>
+    <div id="resultF" class="result"></div><br>
+
+   
+    <label for="inputF" style="text-size: 12px;">Fahrenheit:</label>
+    <input type="number" id="inputF" placeholder="Enter Fahrenheit"></input>
+    <button type="button" id="FtoC">Convert to Celsius</button>
+    <div id="resultC" class="result"></div><br>
+    </form></div>
+
+    <form><div class="box2">
+    <label for="inputFeet" style="text-size: 12px;">Feet:</label>
+    <input type="number" id="inputFeet" placeholder="Enter Feet"></input>
+    <button type="button" id="FtoM">Convert to Meters</button>
+    <div id="resultM" class="result"></div><br>
+
+    <label for="inputM" style="text-size: 12px;">Meters:</label>
+    <input type="number" id="inputM" placeholder="Enter Meters"></input>
+    <button type="button" id="MtoF">Convert to Feet</button>
+    <div id="resultFeet" class="result"></div><br>
+    </form></div>
+    
+</div>
+
+<br><br>
+
+<footer><b><p class= "header"  style="border: 1px solid black">
+<font-size: 25px;>----- COPY RIGHT 2023 -----<br>
+JULIANNE MARIE M. CASIA <br>
+COMPUTER SCIENCE - 1B <br>
+CS1130 4-310<br>
+</p><footer>
+
+<script>
+
+        document.getElementById("CtoF").addEventListener("click",
+        function CtoF() {
+        var celsius = parseFloat(document.getElementById("inputC").value);
+        var fahrenheit = ((celsius * 9) / 5) + 32;
+        document.getElementById("resultF").innerHTML = document.getElementById("inputC").value +"°C"+" is equal to " +fahrenheit.toFixed(2) + "°F.";
+        });
+
+        document.getElementById("FtoC").addEventListener("click",
+        function FtoC() {
+        var fahrenheit = parseFloat(document.getElementById("inputF").value);
+        var celsius = (fahrenheit - 32) * 5 / 9;
+        document.getElementById("resultC").innerHTML = document.getElementById("inputF").value + "°F" + " is equal to " + celsius.toFixed(2) + "°C.";
+        });
+
+        document.getElementById("FtoM").addEventListener("click",
+        function FtoM() {
+        var feet = parseFloat(document.getElementById("inputFeet").value);
+        var meters = feet * 0.3048;
+        document.getElementById("resultM").innerHTML = document.getElementById("inputFeet").value + " Feet is equal to " +  meters.toFixed(4) + " Meters.";
+        });
+
+        document.getElementById("MtoF").addEventListener("click",
+        function MtoF() {
+        var meters = parseFloat(document.getElementById("inputM").value);
+        var feet = meters * 3.28084;
+        document.getElementById("resultFeet").innerHTML = document.getElementById("inputM").value + " Meters is equal to " + feet.toFixed(4) + " Feet.";
+        });
+</script>
+</body>
+</html>
+</body>
+</html>
