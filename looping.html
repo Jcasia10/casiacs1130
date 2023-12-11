@@ -123,21 +123,21 @@ background-color:black;
 
 <div class ="box2">
 <h4> FACTORIAL </h4>
-<label for="factorial" style="text-size: 12px;">Input: </label>
+<label for="factorial" style="text-size:12px;">Input:</label>
 <input type="number" id="factorial" placeholder="Enter a digit"></input>
 <button onclick="factorial()">Calculate Factorial</button>
 <div id="resultF" class= "result"></div></div>
 
 <div class="box2">
 <h4> SUM </h4>
-<label for="input1" style="text-size: 12px;">Input:</label>
+<label for="input1" style="text-size:12px;">Input:</label>
 <input type="number" id="input1" placeholder="Enter a digit" ></input>
 <button onclick="sum()">Calculate Sum</button>
 <div id="sum" class="result"></div></div>
 
 <div class="box2">
 <h4> AVERAGE </h4>
-<label for="average" style="text-size: 12px;">Input: </label>
+<label for="average" style="text-size:12px;">Input:</label>
 <input type="number" id="average" placeholder="Enter a digit"></input>
 <button onclick="average()">Calculate Average</button>
 <div id="result" class="result"></div></div>
@@ -167,7 +167,7 @@ function factorial() {
         i++;
     }
     document.getElementById("resultF").innerHTML = "Factorial of " 
-    + document.getElementById("factorial").value + " is " + total +"."; 
+    + document.getElementById("factorial").value + " is " + total +; 
     }
 }
 
@@ -176,14 +176,14 @@ var n = document.getElementById("input1").value;
 var i = n;
 var total = 0;
 if (n < 0) {
-alert("Please enter a positive integer");
+alert("Please enter a positive integer.");
 }
 else {
 do {
 total = parseInt(total + i);
 i--;
 } while (i >= 1) }
-document.getElementById("sum").innerHTML = "The sum of " + document.getElementById("input1").value + " is " + total +".";
+document.getElementById("sum").innerHTML = "The sum of " + document.getElementById("input1").value + " is " + total;
 } 
 
 function average() {
@@ -193,7 +193,7 @@ for (i = 1; i <= x; i++) {
 total = total + i;
 }
 var average = total/(i-1);
-document.getElementById("result").innerHTML = "The average of " + document.getElementById("average").value + " is "+ average+ ".";
+document.getElementById("result").innerHTML = "The average of " + document.getElementById("average").value + " is "+ average;
 }
 </script>
 </body>  
